@@ -1,28 +1,10 @@
 import React from 'react'
 import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
 
-const GET_TODOS = gql`
-  {
-    todos {
-      id
-      type
-    }
-  }
-`;
-
-const ADD_TODO = gql`
-  mutation addTodo($type: String!) {
-    addTodo(type: $type) {
-      id
-      type
-    }
-  }
-`;
+import { GET_TODOS, ADD_TODO } from './Mutations'
 
 const Create = () => {
   let input;
-
   return (
     <Mutation
       mutation={ADD_TODO}

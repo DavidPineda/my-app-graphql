@@ -1,24 +1,7 @@
 import React from 'react'
 import { Query, Mutation } from "react-apollo";
-import gql from "graphql-tag";
 
-const GET_TODOS = gql`
-  {
-    todos {
-      id
-      type
-    }
-  }
-`;
-
-const UPDATE_TODO = gql`
-  mutation updateTodo($id: String!, $type: String!) {
-    updateTodo(id: $id, type: $type) {
-      id
-      type
-    }
-  }
-`;
+import { GET_TODOS, UPDATE_TODO } from './Mutations'
 
 const Update = () => (
   <Query query={GET_TODOS}>
